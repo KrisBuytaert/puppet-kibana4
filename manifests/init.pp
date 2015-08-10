@@ -56,9 +56,13 @@ class kibana4 (
   if $usepackage {
 
     package { 'kibana4':
-      ensure => '4.0.3-1',
+      ensure  => '4.0.3-1',
+    }
+    file {"$install_dir/kibana4":
+      ensure => directory,
     }
   }
+
   else
   {
 
@@ -83,7 +87,7 @@ class kibana4 (
   file { "${install_dir}/kibana4/config/kibana.yml":
     ensure  => file,
     content => template('kibana4/kibana.yml.erb'),
-    require => File["${install_dir}/kibana4"]
+    #  require => File["${install_dir}/kibana4"]
   }
 
   # startup script
