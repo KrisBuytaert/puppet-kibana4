@@ -56,7 +56,7 @@ class kibana4 (
   if $usepackage {
 
     package { 'kibana4':
-      ensure  => '4.0.3_2',
+      ensure  => 'latest',
     }
     file {"$install_dir/kibana4":
       ensure => directory,
