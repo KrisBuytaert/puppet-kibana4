@@ -56,7 +56,7 @@ class kibana4 (
   if $usepackage {
 
     package { 'kibana4':
-      ensure  => '4.0.3-1',
+      ensure  => '4.0.3_2',
     }
     file {"$install_dir/kibana4":
       ensure => directory,
@@ -82,6 +82,7 @@ class kibana4 (
     }
 
   }
+
 
   # set config
   file { "${install_dir}/kibana4/config/kibana.yml":
